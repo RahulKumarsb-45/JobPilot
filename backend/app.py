@@ -26,12 +26,11 @@ app = FastAPI(
 
 
 app.add_middleware(
- allow_origins=[
-    "http://localhost:5173",
-    "http://127.0.0.1:5173",
-    "https://jobpilot-frontend-livid.vercel.app",
-    "https://jobpilot-frontend-green.vercel.app",
-],
+    CORSMiddleware,
+    allow_origins=[
+        "http://localhost:5173",
+        "http://127.0.0.1:5173",
+    ],
     allow_credentials=True,
     allow_methods=["GET", "POST", "OPTIONS"],
     allow_headers=["*"],
